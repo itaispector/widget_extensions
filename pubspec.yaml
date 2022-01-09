@@ -1,5 +1,6 @@
-name: widget_extensions
+name: widget_extensions_functions
 description: A new Flutter package project.
+repository: https://github.com/itaispector/widget_extensions
 version: 0.0.1
 homepage:
 
