@@ -1,6 +1,6 @@
 # widget_extensions
 
-A new Flutter package project.
+A convient way to add features to widgets without wrapping them inside a widget.
 
 ## Getting Started
 

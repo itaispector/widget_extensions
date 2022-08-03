@@ -1,6 +1,7 @@
 library widget_extensions;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 extension WidgetExtensions on Widget {
   Widget withPadding(EdgeInsetsGeometry padding) {
@@ -10,14 +11,14 @@ extension WidgetExtensions on Widget {
     );
   }
 
-  withOpacity(double opacity) {
+  Widget withOpacity(double opacity) {
     return Opacity(
       opacity: opacity,
       child: this,
     );
   }
 
-  addBorder(BoxBorder border) {
+  Widget addBorder(BoxBorder border) {
     return Container(child: this, decoration: BoxDecoration(border: border));
   }
 
@@ -32,7 +33,7 @@ extension WidgetExtensions on Widget {
     return Center(child: this);
   }
 
-  transform(Matrix4 transform) {
+  Widget transform(Matrix4 transform) {
     return Transform(child: this, transform: transform);
   }
 
@@ -153,5 +154,16 @@ extension WidgetExtensions on Widget {
             ),
           ],
         ));
+  }
+
+  Widget addSlideables(List<SlidableAction> actions, {extentRatio = 0.25}) {
+    return Slidable(
+      endActionPane: ActionPane(
+        motion: ScrollMotion(),
+        extentRatio: extentRatio,
+        children: actions,
+      ),
+      child: this,
+    );
   }
 }
