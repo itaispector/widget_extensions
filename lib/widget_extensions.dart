@@ -1,6 +1,7 @@
 library widget_extensions;
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
 extension WidgetExtensions on Widget {
@@ -165,5 +166,10 @@ extension WidgetExtensions on Widget {
       ),
       child: this,
     );
+  }
+
+  Widget condition(bool condition, wrapper) {
+    if (condition) return wrapper(child: this);
+    return this;
   }
 }

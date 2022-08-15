@@ -1,7 +1,7 @@
 name: widget_extensions_functions
 description: Convient functions for extending widgets
 repository: https://github.com/itaispector/widget_extensions
-version: 0.0.4
+version: 0.0.5
 homepage:
 
 environment:
