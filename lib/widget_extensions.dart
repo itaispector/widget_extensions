@@ -169,7 +169,7 @@ extension WidgetExtensions on Widget {
   }
 
   Widget condition(bool condition, wrapper) {
-    if (condition) return wrapper(child: this);
+    if (condition) return wrapper.child(this);
     return this;
   }
 }
