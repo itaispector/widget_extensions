@@ -168,7 +168,7 @@ extension WidgetExtensions on Widget {
     );
   }
 
-  Widget conditionedSize(double? height, double? width) {
+  Widget conditionedSize({double? height, double? width}) {
     if (height != null || width != null) {
       return SizedBox(
         height: height,
