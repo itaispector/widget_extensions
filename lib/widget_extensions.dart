@@ -168,8 +168,14 @@ extension WidgetExtensions on Widget {
     );
   }
 
-  Widget condition(bool condition, wrapper) {
-    if (condition) return wrapper.child(this);
+  Widget conditionedSize(double? height, double? width) {
+    if (height != null || width != null) {
+      return SizedBox(
+        height: height,
+        width: width,
+        child: this,
+      );
+    }
     return this;
   }
 }
