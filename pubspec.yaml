@@ -9,9 +9,11 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  flutter_slidable: ^2.0.0
+  keyboard_actions: ^4.0.1
+  styled_widget: ^0.4.0+3
   flutter:
     sdk: flutter
-  flutter_slidable: ^2.0.0
 
 dev_dependencies:
   flutter_test:

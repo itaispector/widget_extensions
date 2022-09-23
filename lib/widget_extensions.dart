@@ -3,6 +3,8 @@ library widget_extensions;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:keyboard_actions/keyboard_actions.dart';
+import 'package:styled_widget/styled_widget.dart' show StyledText;
 
 extension WidgetExtensions on Widget {
   Widget withPadding(EdgeInsetsGeometry padding) {
@@ -177,5 +179,24 @@ extension WidgetExtensions on Widget {
       );
     }
     return this;
+  }
+}
+
+extension TextFieldExtensions on TextFormField {
+  Widget addCloseButton(BuildContext context, FocusNode focusNode,
+      [String buttonText = 'Close']) {
+    return KeyboardActions(
+        config: KeyboardActionsConfig(
+            defaultDoneWidget:
+                Text(buttonText).textColor(Theme.of(context).primaryColor),
+            nextFocus: false,
+            keyboardBarColor: Colors.transparent,
+            actions: [
+              KeyboardActionsItem(
+                focusNode: focusNode,
+                onTapAction: () => {},
+              )
+            ]),
+        child: this);
   }
 }
